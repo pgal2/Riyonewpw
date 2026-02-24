@@ -34,7 +34,7 @@ bot = Client(
     bot_token=BOT_TOKEN
 )
 
-my_name = "JB"
+my_name = "kmx"
 
 cookies_file_path = os.getenv("COOKIES_FILE_PATH", "/modules/youtube_cookies.txt")
 
@@ -105,7 +105,7 @@ async def main():
         
 class Data:
     START = (
-        "🌟 Welcome {0}! 🌟\n\n"
+        "🌸 ​🇼​​🇪​​🇱​​🇨​​🇴​​🇲​​🇪​ ​🇩​​🇪​​🇦​​🇷​, ​🇭​​🇴​​🇵​​🇪​ ​🇾​​🇴​​🇺​’​🇷​​🇪​ ​🇩​​🇴​​🇮​​🇳​​🇬​ ​🇼​​🇪​​🇱​​🇱​ {0}! 🌟\n\n"
     )
 # Define the start command handler
 @bot.on_message(filters.command("start"))
@@ -148,19 +148,19 @@ async def start(client: Client, msg: Message):
     await asyncio.sleep(1)
     await start_message.edit_text(
         Data.START.format(msg.from_user.mention) +
-        "Checking status Okay... Command janke kya karoge**Bot Made BY @DOCTOR_JB**🔍\n\n"
+        "ᴄʜᴇᴄᴋɪɴɢ ꜱᴛᴀᴛᴜꜱ ᴏᴋᴀʏ... **ʙᴏᴛ ᴍᴀᴅᴇ ʙʏ Sᴘᴀʀᴋ ♨ **💻\n\n"
         "Progress:[🟩🟩🟩🟩🟩🟩🟩🟩🟩] 100%\n\n"
     )
 
 @bot.on_message(filters.command(["stop"]) )
 async def restart_handler(_, m):
-    await m.reply_text("**STOPPED**🛑", True)
+    await m.reply_text("**​🇸​​🇹​​🇴​​🇵​​🇵​​🇪​​🇩​**🛑", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command(["team1"]) )
+@bot.on_message(filters.command(["kmx12"]) )
 async def txt_handler(bot: Client, m: Message):
-    editable = await m.reply_text(f"**🔹Hi I am Poweful TXT Downloader📥 Bot.**\n🔹**Send me the TXT file and wait.**")
+    editable = await m.reply_text(f"**🔹​🇭​​🇮​ ​🇮​ ​🇦​​🇲​ ​🇵​​🇴​​🇼​​🇪​​🇫​​🇺​​🇱​ ​🇹​​🇽​​🇹​ ​🇩​​🇴​​🇼​​🇳​​🇱​​🇴​​🇦​​🇩​​🇪​​🇷​📥 ​🇧​​🇴​​🇹​.**\n🔹**ꜱᴇɴᴅ ᴍᴇ ᴛʜᴇ ᴛxᴛ ꜰɪʟᴇ ᴀɴᴅ ᴡᴀɪᴛ.**")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -180,7 +180,7 @@ async def txt_handler(bot: Client, m: Message):
         os.remove(x)
         return
    
-    await editable.edit(f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **1**")
+    await editable.edit(f"🇹​​🇴​​🇹​​🇦​​🇱​ ​🇱​​🇮​​🇳​​🇰​​🇸​ ​🇫​​🇴​​🇺​​🇳​​🇩​ ​🇦​​🇷​​🇪​ **{len(links)}**\n\nꜱᴇɴᴅ ꜰʀᴏᴍ ᴡʜᴇʀᴇ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ɪɴɪᴛɪᴀʟ ɪꜱ **1**")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
     await input0.delete(True)
@@ -188,7 +188,7 @@ async def txt_handler(bot: Client, m: Message):
         arg = int(raw_text)
     except:
         arg = 1
-    await editable.edit("**Enter Your Batch Name or send d for grabing from text filename.**")
+    await editable.edit("**ᴇɴᴛᴇʀ ʏᴏᴜʀ ʙᴀᴛᴄʜ ɴᴀᴍᴇ ᴏʀ ꜱᴇɴᴅ ᴅ ꜰᴏʀ ɢʀᴀʙɪɴɢ ꜰʀᴏᴍ ᴛᴇxᴛ ꜰɪʟᴇɴᴀᴍᴇ.**")
     input1: Message = await bot.listen(editable.chat.id)
     raw_text0 = input1.text
     await input1.delete(True)
@@ -197,7 +197,7 @@ async def txt_handler(bot: Client, m: Message):
     else:
         b_name = raw_text0
 
-    await editable.edit("**Enter resolution.\n Eg : 480 or 720**")
+    await editable.edit("**ᴇɴᴛᴇʀ ʀᴇꜱᴏʟᴜᴛɪᴏɴ.\n Eg :360, 480 or 720**")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
@@ -219,7 +219,7 @@ async def txt_handler(bot: Client, m: Message):
     except Exception:
             res = "UN"
     
-    await editable.edit("**Enter Your Name or send 'de' for use default.\n Eg :@DOCTOR_JB **")
+    await editable.edit("**ᴇɴᴛᴇʀ ʏᴏᴜʀ ɴᴀᴍᴇ ᴏʀ ꜱᴇɴᴅ 'de' ꜰᴏʀ ᴜꜱᴇ ᴅᴇꜰᴀᴜʟᴛ.\n Eg : @Kmxretro **")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
@@ -228,7 +228,7 @@ async def txt_handler(bot: Client, m: Message):
     else:
         CR = raw_text3
         
-    await editable.edit("**Enter Your PW Token For 𝐌𝐏𝐃 𝐔𝐑𝐋  or send 'unknown' for use default**")
+    await editable.edit("**ᴇɴᴛᴇʀ ʏᴏᴜʀ ᴘᴡ ᴛᴏᴋᴇɴ ꜰᴏʀ 𝐌𝐏𝐃 𝐔𝐑𝐋  ᴏʀ ꜱᴇɴᴅ 'ᴜɴᴋɴᴏᴡɴ' ꜰᴏʀ ᴜꜱᴇ ᴅᴇꜰᴀᴜʟᴛ**")
     input4: Message = await bot.listen(editable.chat.id)
     raw_text4 = input4.text
     await input4.delete(True)
@@ -237,7 +237,7 @@ async def txt_handler(bot: Client, m: Message):
     else:
         MR = raw_text4
         
-    await editable.edit("Now send the **Thumb url**\n**Eg :** ``\n\nor Send `no`")
+    await editable.edit("ɴᴏᴡ ꜱᴇɴᴅ ᴛʜᴇ**Thumb url**\n**Eg :** ``\n\nor ꜱᴇɴᴅ `no`")
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
     await input6.delete(True)
@@ -311,8 +311,8 @@ async def txt_handler(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**🎞️ VID_ID: {str(count).zfill(3)}.\n\n📄 Title: {name1} {res}.mkv\n\n<pre><code>📚 Batch Name: {b_name}</code></pre>\n\n📥 Extracted By : {CR}\n\n**━━━━━✦💙𝗝𝗕💙✦━━━━━━**'
-                cc1 = f'**📁 PDF_ID: {str(count).zfill(3)}.\n\n📄 Title: {name1} .pdf\n\n<pre><code>📚 Batch Name: {b_name}</code></pre>\n\n📥 Extracted By : {CR}\n\n**━━━━━✦💙𝗝𝗕💙✦━━━━━━**'
+                cc = f'**🎞️ VID_ID: {str(count).zfill(3)}.\n\n📝 Tɪᴛʟᴇ : ➤ {name1} {res}.mkv\n\n<pre><code>🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ : ➤ {b_name}</code></pre>\n\n📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ : ➤ {CR}\n\n**━━━━━━ ✦ 💠 ​ᴋᴍx​ 💠 ✦ ━━━━━━**'
+                cc1 = f'**📁 PDF_ID: {str(count).zfill(3)}.\n\n📝 Tɪᴛʟᴇ : ➤ {name1} .pdf\n\n<pre><code>🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ : ➤ {b_name}</code></pre>\n\n📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ : ➤ {CR}\n\n**━━━━━━ ✦ 💠 ᴋᴍx 💠 ✦ ━━━━━━**'
                     
                 
                 if "drive" in url:
@@ -374,7 +374,7 @@ async def txt_handler(bot: Client, m: Message):
                         continue                       
                           
                 else:
-                    Show = f"❊⟱ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 ⟱❊ »\n\n📄 Title:- `{name}\n\n⌨ 𝐐𝐮𝐥𝐢𝐭𝐲 » {raw_text2}`\n\n**🔗 𝐔𝐑𝐋 »** `{url}`\n\n**𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ @DOCTOR_JB"
+                    Show = f"❊⟱ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 ⟱❊ »\n\n📄 Title:- `{name}\n\n⌨ 𝐐𝐮𝐥𝐢𝐭𝐲 » {raw_text2}`\n\n**🔗 𝐔𝐑𝐋 »** `{url}`\n\n**𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ @Kmxretro"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
@@ -391,7 +391,7 @@ async def txt_handler(bot: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("𝐀𝐋𝐋 𝐃𝐎𝐍𝐄 ✅ 𝐓𝐈𝐋𝐋 𝐍𝐎𝐖 ")
+    await m.reply_text("𝐔𝐏𝐃𝐀𝐓𝐄 : 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐄𝐃 ✅ ")
 
 # Advance
 
