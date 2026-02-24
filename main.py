@@ -392,10 +392,7 @@ async def txt_handler(bot: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text(" ╔═══ 𝐒𝐓𝐀𝐓𝐔𝐒 𝐔𝐏𝐃𝐀𝐓𝐄 ═══╗
-➤ 𝐀𝐋𝐋 𝐓𝐀𝐒𝐊𝐒 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐄𝐃 ✅
-➤ 𝐄𝐕𝐄𝐑𝐘𝐓𝐇𝐈𝐍𝐆 𝐈𝐒 𝐔𝐏 𝐓𝐎 𝐃𝐀𝐓𝐄 📌
-╚══════════════════╝ ")
+    await m.reply_text(" █▓▒░ 𝐌𝐈𝐒𝐒𝐈𝐎𝐍 𝐃𝐎𝐍𝐄 ░▒▓█ ")
 
 # Advance
 
