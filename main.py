@@ -288,6 +288,7 @@ async def txt_handler(bot: Client, m: Message):
                      
                                                          
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
+            title_name = re.sub(r"^\d+\)\s*", "", name1)
             name = f'{str(count).zfill(3)}) {name1[:60]} {my_name}'
                       
             
@@ -311,9 +312,9 @@ async def txt_handler(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**🎞️ VID_ID: {str(count).zfill(3)}.\n\n📝 Tɪᴛʟᴇ : ➤ {name1} {res}.mkv\n\n<pre><code>🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ : ➤ {b_name}</code></pre>\n\n📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ : ➤ {CR}\n\n**━━━━━━ ✦ 💠 𝗸𝗺𝘅 💠 ✦ ━━━━━━**'
-                cc1 = f'**📁 PDF_ID: {str(count).zfill(3)}.\n\n📝 Tɪᴛʟᴇ : ➤ {name1} .pdf\n\n<pre><code>🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ : ➤  {b_name}</code></pre>\n\n📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ : ➤ {CR}\n\n**━━━━━━ ✦ 💠 𝗸𝗺𝘅 💠 ✦ ━━━━━━**'
-                    
+                cc = f'**🎞️ VID_ID: {str(count).zfill(3)}.\n\n📝 Tɪᴛʟᴇ : ➤ {title_name} {res}.mkv\n\n<pre><code>🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ : ➤ {b_name}</code></pre>\n\n📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ : ➤ {CR}\n\n**━━━━━━ ✦ 💠 𝗸𝗺𝘅 💠 ✦ ━━━━━━**'
+                cc1 = f'**📁 PDF_ID: {str(count).zfill(3)}.\n\n📝 Tɪᴛʟᴇ : ➤ {title_name} .pdf\n\n<pre><code>🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ : ➤  {b_name}</code></pre>\n\n📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ : ➤ {CR}\n\n**━━━━━━ ✦ 💠 𝗸𝗺𝘅 💠 ✦ ━━━━━━**'
+                
                 
                 if "drive" in url:
                     try:
@@ -522,6 +523,7 @@ async def txt_handler(bot: Client, m: Message):
              url =  f"https://pw-url-api-v1mf.onrender.com/process?v=https://sec1.pw.live/{vid_id}/master.mpd&quality={raw_text2}"
 
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
+            title_name = re.sub(r"^\d+\)\s*", "", name1)
             name = f'{str(count).zfill(3)}) {name1[:60]} {my_name}'
           
 
@@ -545,9 +547,9 @@ async def txt_handler(bot: Client, m: Message):
 
             try:  
         
-                cc = f'**🎞️ VID_ID: {str(count).zfill(3)}.\n\nTitle: {name1} STUDENTS💙{res}.mkv\n\n🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ : ➤ {b_name}\n\n📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ : ➤ {CR}\n\n**━━━━━━ ✦ 💠 𝗸𝗺𝘅 💠 ✦ ━━━━━━**'
-                cc1 = f'**📁 PDF_ID: {str(count).zfill(3)}.\n\nTitle: {name1} STUDENTS💙.pdf\n\n🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ : ➤ {b_name}\n\n📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ : ➤ {CR}\n\n**━━━━━━ ✦ 💠 𝗸𝗺𝘅 💠 ✦ ━━━━━━**'
-                    
+                cc = f'**🎞️ VID_ID: {str(count).zfill(3)}.\n\nTitle: {title_name} STUDENTS💙{res}.mkv\n\n🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ : ➤ {b_name}\n\n📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ : ➤ {CR}\n\n**━━━━━━ ✦ 💠 𝗸𝗺𝘅 💠 ✦ ━━━━━━**'
+                cc1 = f'**📁 PDF_ID: {str(count).zfill(3)}.\n\nTitle: {title_name} STUDENTS💙.pdf\n\n🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ : ➤ {b_name}\n\n📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ : ➤ {CR}\n\n**━━━━━━ ✦ 💠 𝗸𝗺𝘅 💠 ✦ ━━━━━━**'
+                
                 
                 if "drive" in url:
                     try:
