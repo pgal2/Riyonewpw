@@ -319,7 +319,7 @@ async def txt_handler(bot: Client, m: Message):
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
-                        copy = await bot.send_document(chat_id=m.chat.id, document=ka, caption=cc1, file_name=document_filename)
+                        copy = await bot.send_document(chat_id=m.chat.id, document=ka, caption=cc1)
                         count+=1
                         os.remove(ka)
                         time.sleep(1)
@@ -554,7 +554,7 @@ async def txt_handler(bot: Client, m: Message):
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
-                        copy = await bot.send_document(chat_id=m.chat.id, document=ka, caption=cc1, file_name=document_filename)
+                        copy = await bot.send_document(chat_id=m.chat.id, document=ka, caption=cc1)
                         count+=1
                         os.remove(ka)
                         time.sleep(1)
