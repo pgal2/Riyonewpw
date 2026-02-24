@@ -36,6 +36,17 @@ bot = Client(
 
 my_name = "kmx"
 
+
+def make_safe_pdf_filename(raw_name: str) -> str:
+    cleaned_name = re.sub(r"^\d+\)\s*", "", raw_name)
+    cleaned_name = cleaned_name.replace("'", "")
+    cleaned_name = re.sub(r"\s+", " ", cleaned_name)
+    cleaned_name = re.sub(r"[^A-Za-z0-9 _-]", "", cleaned_name).strip()
+    cleaned_name = re.sub(r"\.pdf$", "", cleaned_name, flags=re.IGNORECASE).strip()
+    if not cleaned_name:
+        cleaned_name = "document"
+    return f"{cleaned_name}.pdf"
+
 cookies_file_path = os.getenv("COOKIES_FILE_PATH", "/modules/youtube_cookies.txt")
 
 # Define aiohttp routes
@@ -318,7 +329,9 @@ async def txt_handler(bot: Client, m: Message):
                 
                 if "drive" in url:
                     try:
-                        ka = await helper.download(url, name)
+                        safe_pdf_name = make_safe_pdf_filename(name)
+                        pdf_stem = safe_pdf_name[:-4]
+                        ka = await helper.download(url, pdf_stem)
                         copy = await bot.send_document(chat_id=m.chat.id, document=ka, caption=cc1)
                         count+=1
                         os.remove(ka)
@@ -343,16 +356,17 @@ async def txt_handler(bot: Client, m: Message):
         # Check if the response status is OK
                         if response.status_code == 200:
             # Write the PDF content to a file
-                            with open(f'{name}.pdf', 'wb') as file:
+                            safe_pdf_name = make_safe_pdf_filename(name)
+                            with open(safe_pdf_name, 'wb') as file:
                                 file.write(response.content)
 
             # Send the PDF document
                             await asyncio.sleep(4)
-                            copy = await bot.send_document(chat_id=m.chat.id, document=f'{name}.pdf', caption=cc1, file_name=document_filename)
+                            copy = await bot.send_document(chat_id=m.chat.id, document=safe_pdf_name, caption=cc1)
                             count += 1
 
             # Remove the PDF file after sending
-                            os.remove(f'{name}.pdf')
+                            os.remove(safe_pdf_name)
                         else:
                             await m.reply_text(f"Failed to download PDF: {response.status_code} {response.reason}")
 
@@ -363,12 +377,13 @@ async def txt_handler(bot: Client, m: Message):
 
                 elif ".pdf" in url:
                     try:
-                        cmd = f'yt-dlp -o "{name}.pdf" "{url}"'
+                        safe_pdf_name = make_safe_pdf_filename(name)
+                        cmd = f'yt-dlp -o "{safe_pdf_name}" "{url}"'
                         download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                         os.system(download_cmd)
-                        copy = await bot.send_document(chat_id=m.chat.id, document=f'{name}.pdf', caption=cc1, file_name=document_filename)
+                        copy = await bot.send_document(chat_id=m.chat.id, document=safe_pdf_name, caption=cc1)
                         count += 1
-                        os.remove(f'{name}.pdf')
+                        os.remove(safe_pdf_name)
                     except FloodWait as e:
                         await m.reply_text(str(e))
                         time.sleep(e.x)
@@ -553,7 +568,9 @@ async def txt_handler(bot: Client, m: Message):
                 
                 if "drive" in url:
                     try:
-                        ka = await helper.download(url, name)
+                        safe_pdf_name = make_safe_pdf_filename(name)
+                        pdf_stem = safe_pdf_name[:-4]
+                        ka = await helper.download(url, pdf_stem)
                         copy = await bot.send_document(chat_id=m.chat.id, document=ka, caption=cc1)
                         count+=1
                         os.remove(ka)
@@ -578,16 +595,17 @@ async def txt_handler(bot: Client, m: Message):
         # Check if the response status is OK
                         if response.status_code == 200:
             # Write the PDF content to a file
-                            with open(f'{name}.pdf', 'wb') as file:
+                            safe_pdf_name = make_safe_pdf_filename(name)
+                            with open(safe_pdf_name, 'wb') as file:
                                 file.write(response.content)
 
             # Send the PDF document
                             await asyncio.sleep(4)
-                            copy = await bot.send_document(chat_id=m.chat.id, document=f'{name}.pdf', caption=cc1, file_name=document_filename)
+                            copy = await bot.send_document(chat_id=m.chat.id, document=safe_pdf_name, caption=cc1)
                             count += 1
 
             # Remove the PDF file after sending
-                            os.remove(f'{name}.pdf')
+                            os.remove(safe_pdf_name)
                         else:
                             await m.reply_text(f"Failed to download PDF: {response.status_code} {response.reason}")
 
