@@ -311,8 +311,8 @@ async def txt_handler(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**🎞️ VID_ID: {str(count).zfill(3)}.\n\n📝 Tɪᴛʟᴇ : ➤ {name1} {res}.mkv\n\n<pre><code>🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ : ➤ {b_name}</code></pre>\n\n📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ : ➤ {CR}\n\n**━━━━━━ ✦ 💠 ​ᴋᴍx​ 💠 ✦ ━━━━━━**'
-                cc1 = f'**📁 PDF_ID: {str(count).zfill(3)}.\n\n📝 Tɪᴛʟᴇ : ➤ {name1} .pdf\n\n<pre><code>🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ : ➤ {b_name}</code></pre>\n\n📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ : ➤ {CR}\n\n**━━━━━━ ✦ 💠 ᴋᴍx 💠 ✦ ━━━━━━**'
+                cc = f'**🎞️ VID_ID: {str(count).zfill(3)}.\n\n📝 Tɪᴛʟᴇ : ➤ {name1} {res}.mkv\n\n<pre><code>🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ : ➤ {b_name}</code></pre>\n\n📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ : ➤ {CR}\n\n**━━━━━━ ✦ 💠 𝗸𝗺𝘅​ 💠 ✦ ━━━━━━**'
+                cc1 = f'**📁 PDF_ID: {str(count).zfill(3)}.\n\n📝 Tɪᴛʟᴇ : ➤ {name1} .pdf\n\n<pre><code>🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ : ➤ {b_name}</code></pre>\n\n📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ : ➤ {CR}\n\n**━━━━━━ ✦ 💠 𝗸𝗺𝘅 💠 ✦ ━━━━━━**'
                     
                 
                 if "drive" in url:
@@ -391,7 +391,7 @@ async def txt_handler(bot: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("𝐔𝐏𝐃𝐀𝐓𝐄 : 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐄𝐃 ✅ ")
+    await m.reply_text("ᴇᴠᴇʀʏᴛʜɪɴɢ ɪꜱ ᴅᴏɴᴇ ᴛɪʟʟ ɴᴏᴡ ✅ ")
 
 # Advance
 
