@@ -158,7 +158,7 @@ async def restart_handler(_, m):
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command(["kmx12"]) )
+@bot.on_message(filters.command(["riyo"]) )
 async def txt_handler(bot: Client, m: Message):
     editable = await m.reply_text(f"**🔹​🇭​​🇮​ ​🇮​ ​🇦​​🇲​ ​🇵​​🇴​​🇼​​🇪​​🇫​​🇺​​🇱​ ​🇹​​🇽​​🇹​ ​🇩​​🇴​​🇼​​🇳​​🇱​​🇴​​🇦​​🇩​​🇪​​🇷​📥 ​🇧​​🇴​​🇹​.**\n🔹**ꜱᴇɴᴅ ᴍᴇ ᴛʜᴇ ᴛxᴛ ꜰɪʟᴇ ᴀɴᴅ ᴡᴀɪᴛ.**")
     input: Message = await bot.listen(editable.chat.id)
@@ -395,7 +395,7 @@ async def txt_handler(bot: Client, m: Message):
 
 # Advance
 
-@bot.on_message(filters.command(["team2"]) )
+@bot.on_message(filters.command(["aashu"]) )
 async def txt_handler(bot: Client, m: Message):
     editable = await m.reply_text(f"**🔹Hi I am Poweful TXT Downloader📥 Bot.**\n🔹**Send me the TXT file and wait.**")
     input: Message = await bot.listen(editable.chat.id)
